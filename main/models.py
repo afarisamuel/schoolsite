@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
+
 # Create your models here.
 class About(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -17,6 +19,7 @@ class About(models.Model):
 class CourseCategory(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='courses/', default="default.jpg")
     number_of_courses = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -55,3 +58,11 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Gallery(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='gallery/')
+
+    def __str__(self):
+        return self.name

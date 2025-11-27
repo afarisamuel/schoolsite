@@ -4,10 +4,13 @@ from .models import About, CourseCategory, Course, Staff
 
 
 def index(request):
-    about = About.objects.all()[:1]
+    about_data = About.objects.all()[:1]
     course_categories = CourseCategory.objects.all()[:4]
-    courses = Course.objects.all()
+    courses = Course.objects.all()[:3]
     staffs = Staff.objects.all()[:4]
+    about = None
+    if len(about_data) > 0:
+        about = about_data[0]
     context = {
         'about': about,
         'course_categories': course_categories,
@@ -17,14 +20,25 @@ def index(request):
     return render(request, 'index.html', context)
 
 def about(request):
-    about = About.objects.all()[:1]
+    about_data = About.objects.all()[:1]
+    staffs = Staff.objects.all()[:4]
+    about = None
+    if len(about_data) > 0:
+        about = about_data[0]
     context = {
-        'about': about
+        'about': about,
+        'staffs': staffs,
     }
     return render(request, 'about.html', context)
 
 def courses(request):
-    return render(request, 'courses.html')
+    course_categories = CourseCategory.objects.all()[:4]
+    courses = Course.objects.all()
+    context = {
+        "courses": courses,
+        "course_categories": course_categories,
+    }
+    return render(request, 'courses.html', context)
 
 def contact(request):
     return render(request, 'contact.html')
