@@ -30,78 +30,17 @@
                 <h1 class="mb-5">School Galley</h1>
             </div>
             <div class="row g-3">
+                {% for gallery in galleries %}
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                     <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{{ gallery.image.url }}" alt="" style="object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
+                            <h5 class="m-0">{{ gallery.name }}</h5>
                         </div>
                     </a>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="{% static 'img/cat-4.jpg' %}" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Online Marketing</h5>
-                        </div>
-                    </a>
-                </div>
+                {% endfor %}
+                
             </div>
         </div>
     </div>

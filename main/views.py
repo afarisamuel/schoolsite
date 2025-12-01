@@ -1,6 +1,6 @@
 
 from django.shortcuts import render
-from .models import About, CourseCategory, Course, Staff
+from .models import About, CourseCategory, Course, Staff, Gallery, Event
 
 
 def index(request):
@@ -44,11 +44,30 @@ def contact(request):
     return render(request, 'contact.html')
 
 def gallery(request):
-    return render(request, 'gallery.html')
+    galleries = Gallery.objects.all()
+    context = {
+        "galleries": galleries,
+    }
+    return render(request, 'gallery.html', context)
 
 def staff(request):
-    return render(request, 'staff.html')
+    staffs = Staff.objects.all()
+    context = {
+        "staffs": staffs,
+    }
+    return render(request, 'staff.html', context)
 
 def event(request):
-    return render(request, 'event.html')
+    events = Event.objects.all()
+    context = {
+        "events": events
+    }
+    return render(request, 'event.html', context)
+
+def event_details(request, id):
+    event = Event.objects.get(pk=id)
+    context = {
+        "event": event
+    }
+    return render(request, "event_details.html", context)
 
